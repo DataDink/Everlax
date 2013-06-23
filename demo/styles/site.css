@@ -1,0 +1,197 @@
+@import url(http://fonts.googleapis.com/css?family=Happy+Monkey);
+
+html {
+	width: 100%;
+	height: 100%;
+	padding: 0px;
+	margin: 0px;
+	position: fixed;
+	overflow: hidden;
+	background: black;
+}
+
+body {
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	padding: 0px;
+	margin: 0px;
+	position: relative;
+}
+
+body > * {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	left: 0px;
+	top: 0px;
+}
+
+@-webkit-keyframes night-and-day { 0% { -webkit-opacity: 0; opacity: 0; } 50% { -webkit-opacity: 1; opacity: 1; } 100% { -webkit-opacity: 0; opacity: 0; } }
+@-khtml-keyframes night-and-day { 0% { -khtml-opacity: 0; opacity: 0; } 50% { -khtml-opacity: 1; opacity: 1; } 100% { -khtml-opacity: 0; opacity: 0; } }
+@-moz-keyframes night-and-day { 0% { -moz-opacity: 0; opacity: 0; } 50% { -moz-opacity: 1; opacity: 1; } 100% { -moz-opacity: 0; opacity: 0; } }
+@-ms-keyframes night-and-day { 0% { -ms-opacity: 0; opacity: 0; } 50% { -ms-opacity: 1; opacity: 1; } 100% { -ms-opacity: 0; opacity: 0; } }
+@-o-keyframes night-and-day { 0% { -o-opacity: 0; opacity: 0; } 50% { -o-opacity: 1; opacity: 1; } 100% { -o-opacity: 0; opacity: 0; } }
+@keyframes night-and-day { 0% { opacity: 0; } 50% { opacity: 1; } 100% { opacity: 0; } }
+
+@-webkit-keyframes sun-and-moon { 0% { -webkit-transform: rotate(-45deg); transform: rotate(-45deg); } 100% { -webkit-transform: rotate(315deg); transform: rotate(315deg); } }
+@-khtml-keyframes sun-and-moon { 0% { -khtml-transform: rotate(-45deg); transform: rotate(-45deg); } 100% { -khtml-transform: rotate(315deg); transform: rotate(315deg); } }
+@-moz-keyframes sun-and-moon { 0% { -moz-transform: rotate(-45deg); transform: rotate(-45deg); } 100% { -moz-transform: rotate(315deg); transform: rotate(315deg); } }
+@-ms-keyframes sun-and-moon { 0% { -ms-transform: rotate(-45deg); transform: rotate(-45deg); } 100% { -ms-transform: rotate(315deg); transform: rotate(315deg); } }
+@-o-keyframes sun-and-moon { 0% { -o-transform: rotate(-45deg); transform: rotate(-45deg); } 100% { -o-transform: rotate(315deg); transform: rotate(315deg); } }
+@keyframes sun-and-moon { 0% { transform: rotate(-45deg); } 100% { transform: rotate(315deg); } }
+
+@-webkit-keyframes sun-or-moon { 0% { -webkit-transform: rotate(45deg); transform: rotate(45deg); } 100% { -webkit-transform: rotate(-315deg); transform: rotate(-315deg); } }
+@-khtml-keyframes sun-or-moon { 0% { -khtml-transform: rotate(45deg); transform: rotate(45deg); } 100% { -khtml-transform: rotate(-315deg); transform: rotate(-315deg); } }
+@-moz-keyframes sun-or-moon { 0% { -moz-transform: rotate(45deg); transform: rotate(45deg); } 100% { -moz-transform: rotate(-315deg); transform: rotate(-315deg); } }
+@-ms-keyframes sun-or-moon { 0% { -ms-transform: rotate(45deg); transform: rotate(45deg); } 100% { -ms-transform: rotate(-315deg); transform: rotate(-315deg); } }
+@-o-keyframes sun-or-moon { 0% { -o-transform: rotate(45deg); transform: rotate(45deg); } 100% { -o-transform: rotate(-315deg); transform: rotate(-315deg); } }
+@keyframes sun-or-moon { 0% { transform: rotate(45deg); } 100% { transform: rotate(-315deg); } }
+
+#stars {
+	background: url('../images/stars1.png'),
+				url('../images/stars2.png'),
+				url('../images/stars3.png'),
+				url('../images/stars4.png');
+}
+
+#night-and-day {
+	background-color: #406080;
+	-webkit-animation: night-and-day 200s linear infinite;
+	-khtml-animation: night-and-day 200s linear infinite;
+	-moz-animation: night-and-day 200s linear infinite;
+	-ms-animation: night-and-day 200s linear infinite;
+	-o-animation: night-and-day 200s linear infinite;
+	animation: night-and-day 200s linear infinite;
+}
+
+#sun-and-moon {
+	-webkit-animation: sun-and-moon 200s linear infinite;
+	-khtml-animation: sun-and-moon 200s linear infinite;
+	-moz-animation: sun-and-moon 200s linear infinite;
+	-ms-animation: sun-and-moon 200s linear infinite;
+	-ms-animation: sun-and-moon 200s linear infinite;
+	-o-animation: sun-and-moon 200s linear infinite;
+	animation: sun-and-moon 200s linear infinite;
+	width: 50%;
+	height: 115px;
+	margin: 0px auto;
+	bottom: 0px;
+	top: auto;
+	left: 0px;
+	right: 0px;
+}
+
+#sun-and-moon:before {
+	content: "";
+	width: 115px;
+	height: 115px;
+	background: url('../images/sun.png') no-repeat;
+	float: left;
+	-webkit-animation: sun-or-moon 200s linear infinite;
+	-khtml-animation: sun-or-moon 200s linear infinite;
+	-moz-animation: sun-or-moon 200s linear infinite;
+	-ms-animation: sun-or-moon 200s linear infinite;
+	-ms-animation: sun-or-moon 200s linear infinite;
+	-o-animation: sun-or-moon 200s linear infinite;
+	animation: sun-or-moon 200s linear infinite;
+}
+
+#sun-and-moon:after {
+	content: "";
+	width: 115px;
+	height: 115px;
+	background: url('../images/moon.png') no-repeat;
+	float: right;
+	-webkit-animation: sun-or-moon 200s linear infinite;
+	-khtml-animation: sun-or-moon 200s linear infinite;
+	-moz-animation: sun-or-moon 200s linear infinite;
+	-ms-animation: sun-or-moon 200s linear infinite;
+	-ms-animation: sun-or-moon 200s linear infinite;
+	-o-animation: sun-or-moon 200s linear infinite;
+	animation: sun-or-moon 200s linear infinite;
+}
+
+#country-scene {
+	background: url('../images/trees.png') repeat-x 0px 200px, 
+				url('../images/trees2.png') repeat-x 0px 190px, 
+				url('../images/hills.png') repeat-x 0px 202px, 
+				url('../images/clouds1.png') repeat-x 0px 100px, 
+				url('../images/clouds2.png') repeat-x 0px 55px; 
+	background-color: transparent; 
+	height: 300px;	
+	bottom: 0px;
+	top: auto;
+}
+
+#logo-depth {
+	background: url('../images/clouds2.png') repeat-x 300px 0px;
+	bottom: 200px;
+	height: 60px;
+	top: auto;
+}
+
+#logo {
+	background: url('../images/logo.png') no-repeat center center;
+	width: 400px;
+	height: 80px;
+	margin: 0px auto;
+	top: auto;
+	bottom: 200px;
+	right: 0px;
+	left: 0px;
+}
+
+#content {
+	top: 75px;
+	left: auto;
+	right: 50px;
+	width: auto;
+	height: auto;
+	text-align: right;
+	line-height: 80px;
+}
+
+.button {
+	font-family: 'Happy Monkey', cursive;
+	font-size: 40px;
+	padding: 15px 25px;
+	margin: 50px 25px;
+	border-radius: 100px;
+	box-shadow: 0px 0px 0px 0px #8080FF, 0px 0px 0px 2px #8080FF, 10px 10px 10px 0px #000000;
+	border: 2px solid black;
+	text-decoration: none;
+	font-style: normal;
+	color: white;
+	
+	transition: .25s all ease-in-out;
+	background: rgb(167,207,223);
+	background: -moz-linear-gradient(top,  rgba(167,207,223,1) 0%, rgba(35,83,138,1) 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(167,207,223,1)), color-stop(100%,rgba(35,83,138,1)));
+	background: -webkit-linear-gradient(top,  rgba(167,207,223,1) 0%,rgba(35,83,138,1) 100%);
+	background: -o-linear-gradient(top,  rgba(167,207,223,1) 0%,rgba(35,83,138,1) 100%);
+	background: -ms-linear-gradient(top,  rgba(167,207,223,1) 0%,rgba(35,83,138,1) 100%);
+	background: linear-gradient(to bottom,  rgba(167,207,223,1) 0%,rgba(35,83,138,1) 100%);
+}
+
+.button:hover {
+	box-shadow: 0px 0px 25px 0px #8080FF, 0px 0px 0px 2px #8080FF, 10px 10px 10px 0px #000000;
+	background: rgb(195,214,221);
+	background: -moz-linear-gradient(top,  rgba(195,214,221,1) 0%, rgba(99,117,137,1) 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(195,214,221,1)), color-stop(100%,rgba(99,117,137,1)));
+	background: -webkit-linear-gradient(top,  rgba(195,214,221,1) 0%,rgba(99,117,137,1) 100%);
+	background: -o-linear-gradient(top,  rgba(195,214,221,1) 0%,rgba(99,117,137,1) 100%);
+	background: -ms-linear-gradient(top,  rgba(195,214,221,1) 0%,rgba(99,117,137,1) 100%);
+	background: linear-gradient(to bottom,  rgba(195,214,221,1) 0%,rgba(99,117,137,1) 100%);
+}
+
+.button:active {
+	box-shadow: 0px 0px 25px 0px #8080FF, 0px 0px 0px 2px #8080FF, 10px 10px 10px 0px #000000;
+	background: rgb(111,190,219);
+	background: -moz-linear-gradient(top,  rgba(111,190,219,1) 0%, rgba(2,66,135,1) 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(111,190,219,1)), color-stop(100%,rgba(2,66,135,1)));
+	background: -webkit-linear-gradient(top,  rgba(111,190,219,1) 0%,rgba(2,66,135,1) 100%);
+	background: -o-linear-gradient(top,  rgba(111,190,219,1) 0%,rgba(2,66,135,1) 100%);
+	background: -ms-linear-gradient(top,  rgba(111,190,219,1) 0%,rgba(2,66,135,1) 100%);
+	background: linear-gradient(to bottom,  rgba(111,190,219,1) 0%,rgba(2,66,135,1) 100%);
+}
