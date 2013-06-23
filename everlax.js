@@ -5,6 +5,7 @@
 // created by:  Mark Nelson                                                         //
 // version:     1.0                                                                 //
 // download:    https://github.com/DataDink/Everlax                                 //
+// site:        http://datadink.github.io/Everlax/                                  //
 // docs:        https://github.com/DataDink/Everlax/wiki                            //
 //                                                                                  //
 //////////////////////////////////////////////////////////////////////////////////////
