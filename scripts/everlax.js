@@ -5,6 +5,7 @@
 // created by:  Mark Nelson                                                         //
 // version:     1.0                                                                 //
 // download:    https://github.com/DataDink/Everlax                                 //
+// site:        http://datadink.github.io/Everlax/                                  //
 // docs:        https://github.com/DataDink/Everlax/wiki                            //
 //                                                                                  //
 //////////////////////////////////////////////////////////////////////////////////////
@@ -72,8 +73,8 @@ if (!String.prototype.trim) {
 
 					// calculate final start point
 					var startParts = background.startPoints[index].split(' ');
-                    var startX = calcUnit(startParts[0], size.width, containerSize.width);
-                    var startY = calcUnit(startParts[1], size.height, containerSize.height);
+                    var startX = calcUnit(startParts[0], size.width, containerSize.width - size.width);
+                    var startY = calcUnit(startParts[1], size.height, containerSize.height - size.height);
                     var startPoint = startX + 'px ' + startY + 'px';
                     background.startPoints[index] = startPoint;
 
@@ -232,11 +233,11 @@ if (!String.prototype.trim) {
     }
 
     function parseIntOrDefault(value, defaultValue) {
-        try { return parseInt(value.trim()); } catch (ex) { return defaultValue || 0; }
+        try { return parseInt(value.toString().trim()); } catch (ex) { return defaultValue || 0; }
     }
 
     function parseFloatOrDefault(value, defaultValue) {
-        try { return parseFloat(value.trim()); } catch (ex) { return defaultValue || 0; }
+        try { return parseFloat(value.toString().trim()); } catch (ex) { return defaultValue || 0; }
     }
 
     function round(number) {
@@ -245,7 +246,8 @@ if (!String.prototype.trim) {
 
     function getNormalizer(number, target) {
 		// gets a value required to reach the nearest even multiple of target
-        var value = target - number % target;
+        var value = target - Math.abs(number) % Math.abs(target);
+		value = number < 0 ? -Math.abs(value) : Math.abs(value);
         return value == target ? 0 : value;
     }
 })(jQuery);
