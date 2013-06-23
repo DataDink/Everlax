@@ -233,11 +233,11 @@ if (!String.prototype.trim) {
     }
 
     function parseIntOrDefault(value, defaultValue) {
-        try { return parseInt(value.trim()); } catch (ex) { return defaultValue || 0; }
+        try { return parseInt(value.toString().trim()); } catch (ex) { return defaultValue || 0; }
     }
 
     function parseFloatOrDefault(value, defaultValue) {
-        try { return parseFloat(value.trim()); } catch (ex) { return defaultValue || 0; }
+        try { return parseFloat(value.toString().trim()); } catch (ex) { return defaultValue || 0; }
     }
 
     function round(number) {
