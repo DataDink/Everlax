@@ -73,8 +73,8 @@ if (!String.prototype.trim) {
 
 					// calculate final start point
 					var startParts = background.startPoints[index].split(' ');
-                    var startX = calcUnit(startParts[0], size.width, containerSize.width);
-                    var startY = calcUnit(startParts[1], size.height, containerSize.height);
+                    var startX = calcUnit(startParts[0], size.width, containerSize.width - size.width);
+                    var startY = calcUnit(startParts[1], size.height, containerSize.height - size.height);
                     var startPoint = startX + 'px ' + startY + 'px';
                     background.startPoints[index] = startPoint;
 
@@ -220,7 +220,7 @@ if (!String.prototype.trim) {
 
     function calcUnit(unit, length, containerLength) {
 		// calculate a real value from a unit value
-        unit = unit.trim();
+        unit = (unit || '').trim();
         var unitValue = 0;
         try { unitValue = parseInt(unit); } catch (ex) {};
 
@@ -246,7 +246,8 @@ if (!String.prototype.trim) {
 
     function getNormalizer(number, target) {
 		// gets a value required to reach the nearest even multiple of target
-        var value = target - number % target;
+        var value = target - Math.abs(number) % Math.abs(target);
+		value = number < 0 ? -Math.abs(value) : Math.abs(value);
         return value == target ? 0 : value;
     }
 })(jQuery);
