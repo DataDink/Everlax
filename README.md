@@ -20,4 +20,5 @@ Everlax utilizes newer html and css spec technology for performance and so is on
 * Mozilla FireFox v.21
 * Google Chrome v.27
 * Internet Explorer v.10
+
 Compatability with other browsers is untested and may have unexpected results.
