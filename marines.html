@@ -2,6 +2,7 @@
 	<head>
 		<script type="text/javascript" src="scripts/jquery.js"></script>
 		<script type="text/javascript" src="scripts/everlax.js"></script>
+		<link href='http://fonts.googleapis.com/css?family=Montserrat+Alternates' rel='stylesheet' type='text/css'>
 		<style>
 			div {
 				position: fixed;
@@ -27,13 +28,35 @@
 				background: url('images/marines.png') no-repeat center 25px;
 				background-size: 50%;
 			}
+			
+			#logo {
+				color: #382800;
+			}
+			
+			#links {
+				font-family: 'Montserrat Alternates', sans-serif;
+				text-align: center;
+				height: auto;
+				top: 650px;
+			}
+			a {
+				color: #382800;
+			}
 		</style>
 	</head>
 	<body style="background: black;">
 		<div id="bg"></div>
 		<div id="main"></div>
 		<div id="fg"></div>
-
+		
+		<div id="links">
+			<span id="logo">-Everlax-</span>
+			<br />
+			<a class="button" href="https://github.com/DataDink/Everlax/raw/master/everlax.js" title="right-click -&gt; Save As">Download</a>
+			<a class="button" href="https://github.com/DataDink/Everlax">GitHub</a>
+			<a class="button" href="https://github.com/DataDink/Everlax/wiki">About</a>
+			<a class="button" href="http://www.markonthenet.com/Me/Home/ContactMe">Contact</a>
+		</div>
 	</body>
 	
 	<script type="text/javascript">
