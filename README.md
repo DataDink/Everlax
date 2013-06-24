@@ -8,7 +8,7 @@ Demos
 =====
 
 * [Release Demo](http://datadink.github.io/Everlax/)
-* [US Marines Demo](http://datadink.github.io/Everlax/)
+* [US Marines Demo](http://datadink.github.io/Everlax/marines)
 
 
 Compat
