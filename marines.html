@@ -1,0 +1,42 @@
+<html>
+	<head>
+		<script type="text/javascript" src="scripts/jquery.js"></script>
+		<script type="text/javascript" src="scripts/everlax.js"></script>
+		<style>
+			div {
+				position: fixed;
+				left: 25px; right: 25px;
+				margin: auto;
+				height: 600px;
+			}
+			#main {
+				background: url('images/soldier.png') repeat-x 50% 100%,
+							url('images/soldier.png') repeat-x 50% 100%,
+							url('images/soldier.png') repeat-x 50% 100%,
+							url('images/soldier.png') repeat-x 50% 100%,
+							url('images/soldier.png') repeat-x 50% 100%;
+				background-size: auto 100%, auto 80%, auto 60%, auto 50%, auto 40%;
+			}
+			
+			#bg {
+				background: url('images/sunset.jpg') no-repeat center top;
+				box-shadow: inset 0px -75px 50px -25px black;
+			}
+			
+			#fg {
+				background: url('images/marines.png') no-repeat center 25px;
+				background-size: 50%;
+			}
+		</style>
+	</head>
+	<body style="background: black;">
+		<div id="bg"></div>
+		<div id="main"></div>
+		<div id="fg"></div>
+
+	</body>
+	
+	<script type="text/javascript">
+		$('#main').everlax({ duration: '10s', direction: 180 });
+	</script>
+</html>
