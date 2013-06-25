@@ -11,6 +11,7 @@ body {
 	padding: 0px;
 	margin: auto;	
 	background: url('../images/bg1.png'), url('../images/bg2.png'), url('../images/bg3.png');
+	background-attachment: fixed;
 	background-color: #E0E0E0
 }
 header {
@@ -66,6 +67,14 @@ header > nav > *:first-child:hover {
 header > nav > *:last-child:hover {
 	text-shadow: 3px -2px 3px #FF8060;
 }
+#github {
+	position: fixed;
+	width: 149px;
+	height: 149px;
+	right: 0px;
+	top: 0px;
+	background: url('../images/github.png');
+}
 
 #content {
 	font-family: 'Orienta', sans-serif;
@@ -76,6 +85,12 @@ header > nav > *:last-child:hover {
 	border-radius: 5px;
 	border: 1px solid #A0A0A0;
 	box-shadow: 0px 0px 10px 0px #A0A0A0, inset 0px 0px 100px -20px #A0A0A0;
+}
+#content > * {
+	text-align: center;
+}
+#content > * > * {
+	text-align: left;
 }
 
 a {
@@ -98,7 +113,28 @@ h1, h2, h3, h4, h5, h6 {
 	padding: 0px 25px;
 	margin: 0px -25px 25px;
 }
+p {
+	text-indent: 25px;
+}
 .sparkle {
 	background: url('../images/headline.png'), url('../images/headline.png'), url('../images/headline.png');
 	background-size: auto 300%, auto 200%, auto 100%;
+}
+
+#about-fig2 {
+	margin: 15px 0px;
+	border: 1px solid #808080;
+	background: url('../images/about-fig2a.jpg') repeat-x -100px 38px, url('../images/about-fig2b.jpg') repeat-x -50px 0px;
+	display: inline-block;
+	width: 200px;
+	height: 87px;
+}
+
+.about-fig3 {
+	margin: 15px 5px;
+	border: 1px solid #808080;
+	background: url('../images/about-fig3a.png') 50% 50%, url('../images/about-fig3b.png') 50% 50%;
+	display: inline-block;
+	width: 100px;
+	height: 100px;
 }

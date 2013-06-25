@@ -6,8 +6,17 @@
 		Everlax is a jQuery plugin that takes the concept of parallaxing multiple images and animates it. 
 		With Everlax you can send any number of repeating background images in any one of 360 directions in a seamless, everlasting loop.
 	</p>
+	<image src="images/about-fig1.png" default="" />
 	<p>
 		The parallaxing effect is accomplished by setting multiple backgrounds on a single element using images of different sizes.
-		Each image will travel <a href="#">test link</a> in the same direction, but will require a different speed in order to "loop" at the same time as the other images.
+		Each image will travel in the same direction, but will require a different speed in order to "loop" at the same time as the other images.
 	</p>
+	<div id="about-fig2" data-interaction="everlax" data-everlax-direction="0" data-everlax-duration="10s"></div>
+	<p>
+		In order for the animation to be continuous, the repeating background image must start its animation in the same location that it stops.
+		To accomplish this at different angles Everlax must determine how many times an image must repeat horizontally and vertically and in some cases "fudge" the requested angle a small bit in order to make the animation seamless.
+	</p>
+	<div class="about-fig3" data-interaction="everlax" data-everlax-direction="225" data-everlax-duration="10s"></div>
+	<div class="about-fig3" data-interaction="everlax" data-everlax-direction="270" data-everlax-duration="10s"></div>
+	<div class="about-fig3" data-interaction="everlax" data-everlax-direction="315" data-everlax-duration="10s"></div>
 </div>
