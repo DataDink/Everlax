@@ -1,0 +1,39 @@
+<html>
+	<head>
+		<link href="styles/site.css" rel="stylesheet" type="text/css" />
+		<script src="scripts/jquery.js"></script>
+		<script src="scripts/interaction-lib.js"></script>
+		<script src="scripts/everlax.js"></script>
+	</head>
+	<body data-everlax-direction="270" data-everlax-duration="10s">
+		<header>
+			<nav>
+				<a data-ajaxform-action="about.html" href="#"
+				   data-ajaxform-target="#content"
+				   data-ajaxform-events="click"
+				   data-ajaxform-method="GET"
+				   data-interaction="interaction">
+				   About
+			    </a>
+				<a data-ajaxform-action="howto.html" href="#"
+				   data-ajaxform-target="#content"
+				   data-ajaxform-events="click"
+				   data-ajaxform-method="GET">
+				   How To
+			    </a>
+				<a data-ajaxform-action="demos.html" href="#"
+				   data-ajaxform-target="#content"
+				   data-ajaxform-events="click"
+				   data-ajaxform-method="GET">
+				   Demos
+			    </a>
+			</nav>
+		</header>
+		
+		<div id="content"></div>
+	</body>
+	
+	<script>
+		$('[data-everlax-duration], [data-everlax-direction]').everlax();
+	</script>
+</html>
