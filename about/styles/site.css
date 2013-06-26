@@ -138,3 +138,30 @@ p {
 	width: 100px;
 	height: 100px;
 }
+
+.next-page, .prev-page {
+	display: inline-block;
+	margin: 50px 25px 0px;
+	width: 50px;
+	height: 25px;
+	white-space: nowrap;
+	text-decoration: none;
+	vertical-align: middle;
+}
+
+.prev-page {
+	float: left;
+	clear: left;
+	text-indent: 65px;
+	border-radius: 100px 0px 0px 100px;
+	background: url('../images/prev-fg.png'), url('../images/prev-mid.png'), url('../images/prev-bg.png');
+}
+
+.next-page {
+	float: right;
+	clear: right;
+	text-indent: -125px;
+	border-radius: 0px 100px 100px 0px;
+	background: url('../images/next-fg.png'), url('../images/next-mid.png'), url('../images/next-bg.png');
+}
+
