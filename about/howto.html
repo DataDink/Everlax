@@ -3,6 +3,77 @@
 		How To
 	</h1>
 	
+	<p>
+		Using Everlax is very easy. All you need to do is tell Everlax what direction and how fast and it does the rest. 
+		Everlax has two ways to configure an animation:	
+	</p>
+	
+	<div>Inline Data-Attributes</div>
+	<div style="overflow: auto; max-height: 600px; border: 1px dotted #808080; margin: 25px;">
+		<style>.clip-code-541608ca-d872-4708-96a9-8bb0c2253c61 {font-family: Menlo, Monaco, Consolas, "Courier New", monospace;font-size: 11px;padding: 5px;border: 1px dotted #404040;word-wrap: break-word;list-style: decimal outside none;margin: 0px 0px 0px 33px;}.clip-code-541608ca-d872-4708-96a9-8bb0c2253c61 .c0{color: #000000;}.clip-code-541608ca-d872-4708-96a9-8bb0c2253c61 .c1{color: #0000FF;}.clip-code-541608ca-d872-4708-96a9-8bb0c2253c61 .c2{color: #800000;}.clip-code-541608ca-d872-4708-96a9-8bb0c2253c61 .c3{color: #FF0000;}</style>
+		<ol class="clip-code-541608ca-d872-4708-96a9-8bb0c2253c61">
+			<li><span class="c1">&lt;</span><span class="c2">div</span><span class="c0">&nbsp;</span><span class="c3">style</span><span class="c1">="</span><span class="c3">background</span><span class="c1">:&nbsp;url('image1.png'),&nbsp;url('image2.png')"</span><span class="c0"></span></li>
+			<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="c3">data-everlax-duration</span><span class="c1">="20s"</span><span class="c0"></span></li>
+			<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="c3">data-everlax-direction</span><span class="c1">="90"&gt;&lt;/</span><span class="c2">div</span><span class="c1">&gt;</span><span class="c0"></span></li>
+			<li></li>
+			<li><span class="c1">&lt;</span><span class="c2">script</span><span class="c0">&nbsp;</span><span class="c3">type</span><span class="c1">="text/javascript"&gt;</span><span class="c0"></span></li>
+			<li>&nbsp;&nbsp;&nbsp;&nbsp;$(<span class="c2">'div'</span><span class="c0">).everlax();</span></li>
+			<li><span class="c1">&lt;/</span><span class="c2">script</span><span class="c1">&gt;</span></li>
+		</ol>
+	</div>
+
+	<div>Object Configuration</div>
+	<div style="overflow: auto; max-height: 600px; border: 1px dotted #808080; margin: 25px;">
+		<style>.clip-code-a53aedce-1d0b-483c-a6e8-53d6340df105 {font-family: Menlo, Monaco, Consolas, "Courier New", monospace;font-size: 11px;padding: 5px;border: 1px dotted #404040;word-wrap: break-word;list-style: decimal outside none;margin: 0px 0px 0px 33px;}.clip-code-a53aedce-1d0b-483c-a6e8-53d6340df105 .c0{color: #000000;}.clip-code-a53aedce-1d0b-483c-a6e8-53d6340df105 .c1{color: #0000FF;}.clip-code-a53aedce-1d0b-483c-a6e8-53d6340df105 .c2{color: #800000;}.clip-code-a53aedce-1d0b-483c-a6e8-53d6340df105 .c3{color: #FF0000;}</style>
+		<ol class="clip-code-a53aedce-1d0b-483c-a6e8-53d6340df105">
+			<li><span class="c1">&lt;</span><span class="c2">div</span><span class="c0">&nbsp;</span><span class="c3">style</span><span class="c1">="</span><span class="c3">background</span><span class="c1">:&nbsp;url('image1.png'),&nbsp;url('image2.png')"&gt;&lt;/</span><span class="c2">div</span><span class="c1">&gt;</span><span class="c0"></span></li>
+			<li></li>
+			<li><span class="c1">&lt;</span><span class="c2">script</span><span class="c0">&nbsp;</span><span class="c3">type</span><span class="c1">="text/javascript"&gt;</span><span class="c0"></span></li>
+			<li>&nbsp;&nbsp;&nbsp;&nbsp;$(<span class="c2">'div'</span><span class="c0">).everlax({direction:&nbsp;0,&nbsp;duration:&nbsp;</span><span class="c2">'10s'</span><span class="c0">});</span></li>
+			<li><span class="c1">&lt;/</span><span class="c2">script</span><span class="c1">&gt;</span></li>
+		</ol>
+	</div>
+	
+	<p>
+		Everlax will examine the background images styled on the configured element, 
+		calculate separate start and end points for each,
+		and finally create a CSS3 Keyframes animation for your element.
+	</p>
+	
+	<p>
+		The Everlax element must be styled with at least one background image in order for any effect to be visible.
+		Everlax supports multiple background images on a single element, 
+		but the direction and duration configured on the element applies to the whole animation and not individual images.
+	</p>
+
+	<div style="overflow: auto; max-height: 600px; border: 1px dotted #808080; margin: 25px;">
+		<style>.clip-code-193b10a2-8b98-49f5-b268-6ad9e1b8e917 {font-family: Menlo, Monaco, Consolas, "Courier New", monospace;font-size: 11px;padding: 5px;border: 1px dotted #404040;word-wrap: break-word;list-style: decimal outside none;margin: 0px 0px 0px 33px;}.clip-code-193b10a2-8b98-49f5-b268-6ad9e1b8e917 .c0{color: #000000;}.clip-code-193b10a2-8b98-49f5-b268-6ad9e1b8e917 .c1{color: #800000;}.clip-code-193b10a2-8b98-49f5-b268-6ad9e1b8e917 .c2{color: #FF0000;}.clip-code-193b10a2-8b98-49f5-b268-6ad9e1b8e917 .c3{color: #0000FF;}</style>
+		<ol class="clip-code-193b10a2-8b98-49f5-b268-6ad9e1b8e917">
+			<li>&nbsp;&nbsp;&nbsp;&nbsp;<span class="c1">.my-everlax-element</span><span class="c0">&nbsp;{</span></li>
+			<li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="c2">background</span><span class="c0">:&nbsp;</span><span class="c3">url('my-image1.png'),</span><span class="c0">&nbsp;</span><span class="c3">url('my-image2.png')</span><span class="c0">;</span></li>
+			<li>&nbsp;&nbsp;&nbsp;&nbsp;}</li>
+			<li></li>
+		</ol>
+	</div>
+	
+	<div><strong>Support &amp; Limitations:</strong></div>
+	<ul>
+		<li>Everlax has some limited support for background positioning and sizing.</li>
+		<li>It does not support element size changes.</li>
+		<li>Styles applied by Everlax must be removed from a resized element and the plugin re-applied.</li>
+		<li>Angles are approximate as Everlax will make minor adjustments to keep end animation parameters reasonable.</li>
+	</ul>
+	
+	<br />
+	<div>
+		If you would like to leave me a little note please feel free to contact me at 
+		<a href="http://www.MarkOnTheNet.com/me/contact">MarkOnTheNet.com</a>.
+	</div>
+	<div>
+		If you have found a bug you can report it at
+		<a href="https://www.github.com/DataDink/Everlax">GitHub.com</a>.
+	</div>
+	
 	<a data-ajaxform-action="about.html" href="#" class="prev-page"
 	   data-ajaxform-target="#content"   data-interaction="everlax"
 	   data-ajaxform-events="click"      data-everlax-direction="180"
