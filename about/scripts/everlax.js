@@ -82,10 +82,12 @@ if (!String.prototype.trim) {
 
                     // calculate final destination point
                     var destX = Math.floor(direction.x * size.width * direction.itterations);
-                    var adjustMajor = getNormalizer(destX, size.width);
+					var targetX = direction.x < 0 ? -size.width : size.width;
+                    var adjustMajor = getNormalizer(destX, targetX);
                     destX += adjustMajor + start.x;
                     var destY = Math.floor(direction.y * size.height * direction.itterations);
-                    adjustMajor = getNormalizer(destY, size.height);
+					var targetY = direction.y < 0 ? -size.height : size.height;
+                    adjustMajor = getNormalizer(destY, targetY);
                     destY += adjustMajor + start.y;
                     destinations[index] = destX + 'px ' + destY + 'px';
                     

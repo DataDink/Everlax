@@ -44,19 +44,19 @@ if (!String.prototype.trim) {
         return $(this).each(function () {
             var element = $(this);
             
-			var images = getBgImages(element);
-			if (!images) { return; }
+            var images = getBgImages(element);
+            if (!images) { return; }
             // { x, y, itterations }
             var direction = calculateDirectionVector(parseIntOrDefault(configuration.direction || element.attr('data-everlax-direction') || defaultConfig.direction));
             // '\d+(s|ms)'
             var duration = calculateDuration((configuration.duration || element.attr('data-everlax-duration') || defaultConfig.duration).trim(), direction.itterations);
-			
-			var startPoints = [];
-			var destinations = [];
-			while (startPoints.length < images.length) { 
-				startPoints.push('');
-				destinations.push('');
-			}
+            
+            var startPoints = [];
+            var destinations = [];
+            while (startPoints.length < images.length) { 
+                startPoints.push('');
+                destinations.push('');
+            }
             
             
             for (var i = 0; i < images.length; i++) {
@@ -77,15 +77,17 @@ if (!String.prototype.trim) {
 
                     // calculate final start point
                     var stylePosition = getBgPosition(element, index);
-					var start = calcPosition(stylePosition, size, containerSize);
+                    var start = calcPosition(stylePosition, size, containerSize);
                     startPoints[index] = start.x + 'px ' + start.y + 'px';
 
                     // calculate final destination point
                     var destX = Math.floor(direction.x * size.width * direction.itterations);
-                    var adjustMajor = getNormalizer(destX, size.width);
+					var targetX = direction.x < 0 ? -size.width : size.width;
+                    var adjustMajor = getNormalizer(destX, targetX);
                     destX += adjustMajor + start.x;
                     var destY = Math.floor(direction.y * size.height * direction.itterations);
-                    adjustMajor = getNormalizer(destY, size.height);
+					var targetY = direction.y < 0 ? -size.height : size.height;
+                    adjustMajor = getNormalizer(destY, targetY);
                     destY += adjustMajor + start.y;
                     destinations[index] = destX + 'px ' + destY + 'px';
                     
@@ -95,33 +97,33 @@ if (!String.prototype.trim) {
             }
         });
     }
-	
-	function getBgImages(element) {
-		var imageSources = (element.css('background-image') || '').replace(/(?:.*?url\s*\(\s*['"]?)([^'"\)]+)/gi, '$1,').split(',');
-		imageSources.pop(); // If there are no images then return
-		if (imageSources.length === 1 && !imageSources[0].trim() || imageSources.length === 0) { return null; }
-		return imageSources;
-	}
-	
-	function getBgSize(element, index) {
-		var styles = (element.css('background-size') || '').trim().split(',');
-		if (styles.length <= index) { return 'auto auto'; }
-		var parts = (styles[index] || '').trim().split(' ');
-		while (parts.length < 2) { parts.push('auto'); }
-		var left = normalizeUnit(parts[0]), right = normalizeUnit(parts[1]);
-		return left + ' ' + right;
-	}
-	
-	function getBgPosition(element, index) {
-		var positions = (element.css('background-position') || '').trim().split(',');
-		if (positions.length <= index) { return '0px 0px'; }
-		var parts = (positions[index] || '').trim().split(' ');
-		while (parts.length < 2) { parts.push('0px'); }
-		var swap = parts[0].trim() == 'top' || parts[0].trim() == 'bottom' || parts[1].trim() == 'left' || parts[1].trim() == 'right';
-		var left = normalizeUnit(swap ? parts[1] : parts[0]);
-		var right = normalizeUnit(right = swap ? parts[0] : parts[1]);
-		return left + ' ' + right;
-	}
+    
+    function getBgImages(element) {
+        var imageSources = (element.css('background-image') || '').replace(/(?:.*?url\s*\(\s*['"]?)([^'"\)]+)/gi, '$1,').split(',');
+        imageSources.pop(); // If there are no images then return
+        if (imageSources.length === 1 && !imageSources[0].trim() || imageSources.length === 0) { return null; }
+        return imageSources;
+    }
+    
+    function getBgSize(element, index) {
+        var styles = (element.css('background-size') || '').trim().split(',');
+        if (styles.length <= index) { return 'auto auto'; }
+        var parts = (styles[index] || '').trim().split(' ');
+        while (parts.length < 2) { parts.push('auto'); }
+        var left = normalizeUnit(parts[0]), right = normalizeUnit(parts[1]);
+        return left + ' ' + right;
+    }
+    
+    function getBgPosition(element, index) {
+        var positions = (element.css('background-position') || '').trim().split(',');
+        if (positions.length <= index) { return '0px 0px'; }
+        var parts = (positions[index] || '').trim().split(' ');
+        while (parts.length < 2) { parts.push('0px'); }
+        var swap = parts[0].trim() == 'top' || parts[0].trim() == 'bottom' || parts[1].trim() == 'left' || parts[1].trim() == 'right';
+        var left = normalizeUnit(swap ? parts[1] : parts[0]);
+        var right = normalizeUnit(right = swap ? parts[0] : parts[1]);
+        return left + ' ' + right;
+    }
 
     var styleIndex = 1;
     function tryStartAnimation(element, startPoints, destinations, duration) {
@@ -195,7 +197,7 @@ if (!String.prototype.trim) {
         // supports 'px', '%', and 'auto'
         // todo: add 'em' support to this function
         var parts = (style || '').split(' ');
-		var left = parts[0], right = parts[1];
+        var left = parts[0], right = parts[1];
         if (left == 'auto' && right == 'auto') { return actual; }
         if (left == 'auto') {
             var height = calcUnit(right, actual.height, container.height);
@@ -213,23 +215,23 @@ if (!String.prototype.trim) {
         var height = calcUnit(right);
         return { width: width, height: height };
     }
-	
-	function calcPosition(style, size, container) {
-		var parts = (style || '').split(' ');
-		var left = parts[0], right = parts[1];
-		return {
-			x: calcUnit(left, size.width, container.width - size.width),
-			y: calcUnit(right, size.height, container.height - size.height)
-		}
-	}	
-	
-	function normalizeUnit(unit) {
-		unit = (unit || '').trim();
-		if (!unit) { return '0px'; }
-		if (unit == 'left' || unit == 'top') { return '0%'; }
-		if (unit == 'right' || unit == 'bottom') { return '100%'; }
-		return unit;
-	}
+    
+    function calcPosition(style, size, container) {
+        var parts = (style || '').split(' ');
+        var left = parts[0], right = parts[1];
+        return {
+            x: calcUnit(left, size.width, container.width - size.width),
+            y: calcUnit(right, size.height, container.height - size.height)
+        }
+    }    
+    
+    function normalizeUnit(unit) {
+        unit = (unit || '').trim();
+        if (!unit) { return '0px'; }
+        if (unit == 'left' || unit == 'top') { return '0%'; }
+        if (unit == 'right' || unit == 'bottom') { return '100%'; }
+        return unit;
+    }
 
     function calcUnit(unit, length, containerLength) {
         // calculate a real value from a unit value
@@ -240,7 +242,7 @@ if (!String.prototype.trim) {
         var value = 0;
         if (unit.endsWith('px')) { value = unitValue; }
         else if (unit.endsWith('%')) { value = containerLength * (unitValue / 100); }
-		else if (unit == 'center') { value = containerLength / 2 - length / 2; }
+        else if (unit == 'center') { value = containerLength / 2 - length / 2; }
         return Math.floor(value);
     }
 
