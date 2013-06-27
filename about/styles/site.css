@@ -37,7 +37,7 @@ header:before {
 }
 header > .download {
 	background: url('../images/download.png') no-repeat center center;
-	background-size: 98%;
+	background-size: 99%;
 	width: 100px;
 	height: 30px;
 	position: absolute;
@@ -45,6 +45,13 @@ header > .download {
 	right: 25px;
 	top: 0px;
 	bottom: 0px;
+	border-radius: 4px;
+	box-shadow: 4px 4px 2px 0px #808080;
+}
+header > .download:active {
+	box-shadow: none;
+	right: 23px;
+	top: 2px;
 }
 header > nav {
 	font-family: 'Julius Sans One', sans-serif;
