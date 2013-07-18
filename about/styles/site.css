@@ -15,15 +15,20 @@ body {
 	padding: 0px;
 	margin: auto;	
 	background-color: #E0E0E0;
+	-webkit-transform: translate(0px);
+	-khtml-transform: translate(0px);
+	-moz-transform: translate(0px);
+	-ms-transform: translate(0px);
+	-o-transform: translate(0px);
+	transform: translate(0px);
 }
 
 #bg {
 	position: absolute;
 	left: 0px; right: 0px;
 	top: 0px; bottom: 0px;
-	margin: 0px -1000px;
+	margin: 0px -500px 0px -500px;
 	background: url('../images/bg1.png'), url('../images/bg2.png'), url('../images/bg3.png');
-	background-attachment: fixed;
 }
 
 header {
@@ -100,9 +105,9 @@ header > nav > *:last-child:hover {
 }
 #github {
 	position: fixed;
-	width: 149px;
-	height: 149px;
-	right: 0px;
+	width: 112px;
+	height: 112px;
+	left: 0px;
 	top: 0px;
 	background: url('../images/github.png');
 }
