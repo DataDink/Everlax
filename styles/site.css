@@ -1,22 +1,28 @@
 @import url(http://fonts.googleapis.com/css?family=Happy+Monkey);
 
 html {
-	width: 100%;
+	width: 0px;
 	height: 100%;
 	padding: 0px;
-	margin: 0px;
-	position: fixed;
+	margin: auto;
+	left: 0px; right: 0px;
+	position: absolute;
 	overflow: hidden;
 	background: black;
 }
 
 body {
-	width: 100%;
 	height: 100%;
 	overflow: hidden;
 	padding: 0px;
-	margin: 0px;
+	margin: 0px -1000px;
 	position: relative;
+	-webkit-transform: translate(0px);
+	-khtml-transform: translate(0px);
+	-moz-transform: translate(0px);
+	-ms-transform: translate(0px);
+	-o-transform: translate(0px);
+	transform: translate(0px);
 }
 
 body > * {
@@ -144,11 +150,8 @@ body > * {
 
 #content {
 	top: 75px;
-	left: auto;
-	right: 50px;
-	width: auto;
 	height: auto;
-	text-align: right;
+	text-align: center;
 	line-height: 80px;
 }
 
