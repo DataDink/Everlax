@@ -1,34 +1,37 @@
 @import url(http://fonts.googleapis.com/css?family=Orienta|Lily+Script+One|Julius+Sans+One);
 html {
-	width: 100%;
-	height: 100%;
+	left: 0px; right: 0px;
+	top: 0px; bottom: 0px;
 	position: absolute;
 	padding: 0px;
-	margin: 0px;
+	margin: auto;
 	overflow: auto;
 	overflow-x: hidden;
 }
 body {
-	position: relative;
+	position: absolute;
+	left: 0px; right: 0px;
+	top: 0px;
+	margin: 0px auto 50px;	
 	width: 750px;
 	min-height: 100%;
 	padding: 0px;
-	margin: auto;	
 	background-color: #E0E0E0;
-	-webkit-transform: translate(0px);
-	-khtml-transform: translate(0px);
-	-moz-transform: translate(0px);
-	-ms-transform: translate(0px);
-	-o-transform: translate(0px);
-	transform: translate(0px);
 }
 
 #bg {
-	position: absolute;
-	left: 0px; right: 0px;
+	position: fixed;
+	left: -50px; right: 50px;
 	top: 0px; bottom: 0px;
-	margin: 0px -422px;
+	width: 1055px;
+	margin: 0px auto;
 	background: url('../images/bg1.png'), url('../images/bg2.png'), url('../images/bg3.png');
+	-webkit-transform: translateZ(0px);
+	-khtml-transform: translateZ(0px);
+	-moz-transform: translateZ(0px);
+	-ms-transform: translateZ(0px);
+	-o-transform: translateZ(0px);
+	transform: translateZ(0px);
 }
 
 header {
@@ -36,6 +39,7 @@ header {
 	left: 0px; right: 0px;
 	top: 25px;
 	padding: 100px 50px 0px 50px;
+	margin: 0px auto 75px;
 	background: white;
 	text-align: center;
 	border-radius: 45px;
@@ -67,6 +71,7 @@ header > .download {
 	box-shadow: 4px 4px 2px 0px #808080;
 }
 header > .download:active {
+	position: relative;
 	box-shadow: none;
 	right: 23px;
 	top: 2px;
@@ -104,7 +109,7 @@ header > nav > *:last-child:hover {
 	text-shadow: 3px -2px 3px #FF8060;
 }
 #github {
-	position: fixed;
+	position: absolute;
 	width: 112px;
 	height: 112px;
 	left: 0px;
@@ -114,8 +119,9 @@ header > nav > *:last-child:hover {
 
 #content {
 	position: relative;
-	top: 100px;
 	left: 0px; right: 0px;
+	top: 0px;
+	height: 1000px;
 	font-family: 'Orienta', sans-serif;
 	color: #808080;
 	background: url('../images/steel.jpg');
@@ -123,6 +129,12 @@ header > nav > *:last-child:hover {
 	border-radius: 5px;
 	border: 1px solid #A0A0A0;
 	box-shadow: 0px 0px 10px 0px #A0A0A0, inset 0px 0px 100px -20px #A0A0A0;
+	-webkit-transform: translateZ(0px);
+	-khtml-transform: translateZ(0px);
+	-moz-transform: translateZ(0px);
+	-ms-transform: translateZ(0px);
+	-o-transform: translateZ(0px);
+	transform: translateZ(0px);
 }
 #content > * {
 	text-align: center;
