@@ -121,7 +121,6 @@ header > nav > *:last-child:hover {
 	position: relative;
 	left: 0px; right: 0px;
 	top: 0px;
-	height: 1000px;
 	font-family: 'Orienta', sans-serif;
 	color: #808080;
 	background: url('../images/steel.jpg');
