@@ -71,7 +71,6 @@ header > .download {
 	box-shadow: 4px 4px 2px 0px #808080;
 }
 header > .download:active {
-	position: relative;
 	box-shadow: none;
 	right: 23px;
 	top: 2px;
